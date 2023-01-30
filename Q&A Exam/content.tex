@@ -244,9 +244,63 @@ A disadvantage can be that it is too generic to adequately describe
 specific resources.
 
 \subsection{FOAF: its uses, advantages and drawbacks}
-FOAF is a machine-readable ontology describing persons,
+FOAF is a machine-readable ontology used to describe persons,
 their activities and their relations to other people and objects.
 It allows groups of people to describe social networks without
 the need for a centralised database.\\
-Being an RDF application, it can be easily aggregated and combined
+It can be easily aggregated and combined
 with other vocabularies allowing to capture a very rich set of metadata.
+
+\subsection{SPARQL: its uses, advantages and drawbacks}
+SPARQL (SPARQL Protocol And RDF Query Language) is a language that
+is used to make queries in the semantic web.\\
+It follows the same syntax of SQL, so it has a limited power but with
+the advantage of being decidable with a computational complexity PSPACE.\\
+SPARQL works on graph structures based on pattern matching between
+triplets and a query has the following structure:
+\begin{itemize}
+    \item PREFIX
+    \item SELECT
+    \item FROM
+    \item WHERE
+    \item ORDERED BY
+\end{itemize}
+An interesting aspect of this language is the possibility of searching
+with optional data that could be null or not present.
+In the semantic web, in fact, it is easy to have partial information
+and for this reason the OPTIONAL operator has been inserted in SPARQL.
+In this way, if in the query there are parameters in OPTIONAL and some
+data associated with these parameters are
+absent, the query will not give an error.\\
+A disadvantage of SPARQL is found in particularly complex queries,
+as the computational cost is noticeable.
+
+\subsection{OWL: its uses, advantages and drawbacks}
+RDF allows automatic aggregation of knowledge through URIs,
+but there can be issues of ambiguity. In fact, the same resource
+could be present on the web under different URIs.
+This problem is called the URI variants problem and is one of the main
+reasons that an additional ontological layer has been created,
+the OWL language (Web Ontology Language).\\
+OWL is a W3C language for ontology, it is used to connect
+vocabularies by defining relationships between them and allowing
+to indicate when two classes or properties are the same and when they
+are different.\\
+Here some advantages. It is an enriched schema with more properties
+and reduce the URIs problem. Computationally speaking, OWL is mostly
+used in the average case and so it can be considered polynomial.
+As disadvantage, it is not possible to have both high expressivness
+and decidability, but a compromise has to be adopted.\\
+Both expressiveness and logical decidability can be guaranteed
+by the existance of three different subsets of OWL:
+\begin{itemize}
+    \item OWL Lite: with limited but decidible expressiveness with a
+    computational complexity SHIFT;
+    \item OWL DL: less limited in expressiveness, always decidable but
+    with a computational complexity SHOIN;
+    \item OWL Full: exploits more advanced logics, impling high
+    expressiveness, but is not decidable.
+\end{itemize}
+
+\subsection{Describe at least 1 optimal structure of an
+alliance to optimize PageRank}
