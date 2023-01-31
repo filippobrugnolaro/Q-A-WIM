@@ -156,6 +156,20 @@ As disadvantage, it may be a good thing to control the penalisation made
 by FT-IDF. In fact, choosing different words can also lead to a decrease of
 ranking.
 
+\subsection{Cloaking: uses, advantages and drawbacks}
+The Cloaking is a technique used to increase the score of a web page
+calculated by search engines.\\
+It consists consists in providing different pages under the same address
+to the search engines bots.\\
+If it is the crawler, it is shown the page with the keywords.\\
+If it is the users, it is shown the page they want to see.\\
+The advantage is that the page is more visible and with an higher rank.
+It is also the most effective and the most difficult to detect
+(an employee should come and check the page in person).
+As disadvantage, it leads to great penalties in
+case of being discovered, such as, for example, long-term
+suspension from indexing and search results.
+
 \subsection{Describe the LOD classification: its features, uses and potential advantages and drawbacks}
 Linked Data are a generalization of the semantic web and they are used to
 create knowledge graphs.\\
@@ -192,8 +206,6 @@ computational expensive process and the user does not always feel
 to be able to interface with a database to extract the data he needs.\\
 Concrete examples of LOD are DBpedia and schema.org.
 
-\newpage
-
 \subsection{RDF and RDFS: their features, uses, advantages and drawbacks.}
 RDF (Resource Description Framework) is a technology that allows
 to structure information and remove ambiguities.\\
@@ -214,13 +226,15 @@ computational cost and this is allowed by the RDF Schema.\\
 The RDFS is a schema with an information structure which is made
 of classes, sub-classes and individuals for objects,
 while is made of
-properties, sub-properties, domains and intervals (range) for verbs.\\
+properties, sub-properties, domains and intervals (range) for verbs.
 This implies more power for integrity checks and deductions (RDFS advantage).\\
 The RDF has established basic level semantic rules and so
 the RDF-Schema allows to define ontologies to categorize information
 taxonomically (RDFS advantage). This is useful and gives more power
 to face the URI variants problem (one concept can be expressed differently).
-\\ The main advantages of RDF is that it is well specified
+So RDFS is used in the semantic web and in various applications such as
+linked data and ontologies.\\
+The main advantages of RDF is that it is well specified
 and allows data to be decentralized and distributed, so that anyone
 can create a vocabulary or publish data about other
 resources. Moreover knowledge graph is conceptually simple to understand
@@ -232,6 +246,8 @@ and what is a triple.\\
 Two examples of RDF vocabularies
 are Dublin Core (DC) and Friend Of A Friend (FOAF).
 
+\newpage
+
 \subsection{Dublin Core: its uses, advantages and drawbacks}
 The Dublin Core is one of the first attempts to structure the web
 in a semantic way.\\
@@ -239,17 +255,43 @@ It has got 15 basic and optional metadata elements have been defined.
 They can be repeatable and independent from the domain in which they
 are used (Title, Author, Subject, ID, Source, Date, Language, etc...).\\
 An advantage can be that it allows to define the fundamental and
-essential basic properties for the entire semantic data structure.\\
+essential basic properties for the entire semantic data structure.
+It also enables interoperability between different systems and platforms
+and supports the discovery and reuse of digital resources.\\
 A disadvantage can be that it is too generic to adequately describe
 specific resources.
 
 \subsection{FOAF: its uses, advantages and drawbacks}
-FOAF is a machine-readable ontology used to describe persons,
-their activities and their relations to other people and objects.
-It allows groups of people to describe social networks without
-the need for a centralised database.\\
-It can be easily aggregated and combined
-with other vocabularies allowing to capture a very rich set of metadata.
+FOAF (Friend of a Friend) is a semantic web vocabulary
+used to describe social networks and relationships between individuals
+and organizations. FOAF is expressed in RDF (Resource Description
+Framework) and enables users to create machine-readable descriptions
+of their social connections, interests, and personal information.\\
+FOAF has applications in social media, personal home pages and
+research projects. It allows users to connect and share information
+with each other and provides a standardized format for describing
+people, organizations, and their relationships.\\
+Strengths of FOAF include:
+\begin{itemize}
+    \item Decentralized structure, which enables users to control and manage their own data
+    \item Easy integration with other web technologies and vocabularies
+    \item Enables data to be linked and shared across multiple websites
+    and platforms
+    \item Provides a machine-readable format for storing and retrieving
+    social data
+\end{itemize}
+Weaknesses of FOAF include:
+\begin{itemize}
+    \item Low adoption rate among websites and users
+    \item Limited ability to describe more complex relationships and
+    attributes
+    \item Lack of standardization in the use of FOAF vocabulary and
+    the data it represents
+    \item Security and privacy concerns with sharing personal
+    information in a machine-readable format.
+\end{itemize}
+
+\newpage
 
 \subsection{SPARQL: its uses, advantages and drawbacks}
 SPARQL (SPARQL Protocol And RDF Query Language) is a language that
@@ -304,3 +346,50 @@ by the existance of three different subsets of OWL:
 
 \subsection{Describe at least 1 optimal structure of an
 alliance to optimize PageRank}
+In order to boost the hypertextual score of a page people can use the
+spam farm technique which consists in the creation of structures which
+collect flows from other websites and then pass it to the target page.\\
+So an optimal structure can be constructed with some pages which are
+bidirectional linked to the target one. It mantains a
+very important property called reachability. It consists in the fact that
+every page must be reachable by the search engine. In fact if a page is
+not reached by the serch engine, it is like it doesn't exist.\\
+%So the optimal structure generalized is formed by different parts of the web.
+%One part is owned by us and having n pages we create a double link between
+%them and the target.\\ Then we have the accessible part which is not owned by us
+%but are a group of website that points to our webpage.\\ Finally there is the
+%unreachable part of the web which is not under our control that can have a
+%slight influence because it maybe points to an accessible page which then
+%it trasmits to our target page the flow.\\
+%There is also the optimal structure without full reachability with single
+%links to the target. However, a patch need to be applied, so that the target page
+%can be reachable by other pages which points the ones which  point to the target.
+Based on this, there are 4 different main possibilities to create an
+alliance:
+\begin{itemize}
+    \item Deep alliance: given 2 target pages owned by different entities
+    the alliance consists in having 2 target which are double-linked
+    with its pages and the allied pages.\\ In this way the ranking score
+    is the average of the 2 target pages. This implies more robustness
+    and stability.
+    \item Superficial alliance: given 2 target pages owned by different
+    entities the alliance consists in sharing all the unidirectional links of the
+    2 pages double-linking the 2 targets, creating a vortex of flow.\\
+    In this way it is more mantainable because there is only 1 double
+    link between the 2 targets. So the number of links are minimized.\\
+    The score for each target is an increment proportional to the other's
+    allied pages and this implies that the score of each target $>$ the
+    maximum of the original target score.
+    \item Ring: given 3 or more target pages owned by different
+    entities the alliance consists in sharing all the unidirectional links of the
+    creating a unidirectional vortex of flow betwwen the targets.\\
+    This ensures scalability and he score for each target is an increment proportional to the other's
+    allied pages and this implies that the score of each target $>$ the
+    maximum of the original target score.
+    \item Complete core: given 3 or more target pages owned by different
+    entities the alliance consists in sharing all the unidirectional links of the
+    creating a bidirectional vortex of flow betwwen the targets.\\
+    This ensures scalability and the score for each target is an increment proportional to the other's
+    allied pages and this implies that the score of each target $>$ the
+    maximum of the original target score.
+\end{itemize}
