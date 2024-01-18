@@ -1,4 +1,25 @@
-\section{Q\&A WIM}
+\section{Usability questions}
+\subsection{Explain the positioning problem of the advert banners}
+User hate advertisements, only a small portion of the userbase clicks on advertisements.
+In order to attract users to click on advertisements the positioning must be done properly, otherwise the advertisement will not be effective.
+
+The best places to put adv is on the left/right column and on the top of the page, as this places are rather visible, while at the end of the page is not a good position for obvious reasons.
+
+Unintuetevely, adv is important as it give us free content and having adv in the site means that the cost of running will be covered by them. No adv usually means that someone has to pay! Either that will be you, purchasing a subscription or by giving them your data (that to this day is a gold mine), or by others like donations, governaments etc.
+
+Another key position for adv is between interesting text, as the user will not bother too much and the adc will be noted more often. 
+Something to avoid at all costs is having ads that occupy a lot of space, if it emit sounds, if it blinks etc.
+
+\subsection{What is meant by "Lost in Navigation"? Describe some solutions to the problem}
+Lost in navigation means that the user that navigated (probably) our site is lost during the navigation.
+
+This occurs when the users start to navigate our site, going deep. If we do not put some indications on where she/he is, then we are putting all the stress into the user as it has to remember from where it came from.
+
+There is a solutions to this problems: breadcrumbs. There are different type of breadcrumbs. For example there is the location, that is the path of the site for the current page. In this way the user will know where she/he is based on the site hierarchy. But this is a rather static solution.
+
+One dynamic solution is keeping track of the path that the user make. This solution will give the user a kind of "history" of navigation.
+
+\section{Search Engine Optimization questions}
 \subsection{Body Spam: uses, advantages and drawbacks}
 The Body Spam is a technique used to increase
 the score of a web page calculated by search
@@ -100,8 +121,6 @@ to pay particular attention to countermeasures.
 Another thing to take into consideration is the TF*IDF in order not to be
 penalised because some keywords are used so many times.
 
-\newpage
-
 \subsection{Dumping technique: uses, advantages and drawbacks}
 The Dumping is a technique used to increase the score of a
 web page calculated by search engines.\\
@@ -170,6 +189,71 @@ As disadvantage, it leads to great penalties in
 case of being discovered, such as, for example, long-term
 suspension from indexing and search results.
 
+\subsection{Describe at least 1 optimal structure of an
+alliance to optimize PageRank}
+In order to boost the hypertextual score of a page people can use the
+spam farm technique which consists in the creation of structures which
+collect flows from other websites and then pass it to the target page.\\
+So an optimal structure can be constructed with some pages which are
+bidirectional linked to the target one. It mantains a
+very important property called reachability. It consists in the fact that
+every page must be reachable by the search engine. In fact if a page is
+not reached by the serch engine, it is like it doesn't exist.\\
+%So the optimal structure generalized is formed by different parts of the web.
+%One part is owned by us and having n pages we create a double link between
+%them and the target.\\ Then we have the accessible part which is not owned by us
+%but are a group of website that points to our webpage.\\ Finally there is the
+%unreachable part of the web which is not under our control that can have a
+%slight influence because it maybe points to an accessible page which then
+%it trasmits to our target page the flow.\\
+%There is also the optimal structure without full reachability with single
+%links to the target. However, a patch need to be applied, so that the target page
+%can be reachable by other pages which points the ones which  point to the target.
+Based on this, there are 4 different main possibilities to create an
+alliance:
+\begin{itemize}
+    \item Deep alliance: given 2 target pages owned by different entities
+    the alliance consists in having 2 target which are double-linked
+    with its pages and the allied pages.\\ In this way the ranking score
+    is the average of the 2 target pages. This implies more robustness
+    and stability.
+    \item Superficial alliance: given 2 target pages owned by different
+    entities the alliance consists in sharing all the unidirectional links of the
+    2 pages double-linking the 2 targets, creating a vortex of flow.\\
+    In this way it is more mantainable because there is only 1 double
+    link between the 2 targets. So the number of links are minimized.\\
+    The score for each target is an increment proportional to the other's
+    allied pages and this implies that the score of each target $>$ the
+    maximum of the original target score.
+    \item Ring: given 3 or more target pages owned by different
+    entities the alliance consists in sharing all the unidirectional links of the
+    creating a unidirectional vortex of flow betwwen the targets.\\
+    This ensures scalability and he score for each target is an increment proportional to the other's
+    allied pages and this implies that the score of each target $>$ the
+    maximum of the original target score.
+    \item Complete core: given 3 or more target pages owned by different
+    entities the alliance consists in sharing all the unidirectional links of the
+    creating a bidirectional vortex of flow betwwen the targets.\\
+    This ensures scalability and the score for each target is an increment proportional to the other's
+    allied pages and this implies that the score of each target $>$ the
+    maximum of the original target score.
+\end{itemize}
+
+\subsection{Describe at least one Link Structure listing its characteristics, uses, advantages and drawbacks}
+In order to boost the hypertextual score of a page people can use different Link structures.
+It is not always straigh forward but is possible to increment the PageRank score both by Inlinks and Outlinks structure.
+
+Inlinks is simplier to understand, since if more sites are pointing to us means that we get more "flow", increasing our score. But we cannot be a dead end as Search Engines penalize this, so having Outlinks gives us more reachability that gives us an higher score
+
+Listing some Inlinks structure:
+\begin{itemize}
+    \item Infiltration: this technique consist in "infiltrating" to other sites (usually blogs, wikis, forums...) and insert links to our site in order to have more links pointing to our site.
+    \item Honey Pot: the technique is to create interesting content ("yummy content") so that we attract reference to our site. The most common way of doing this is copy-paste someone else topic from other sites. Honey Pot are difficult to find, also because even the original author cannot know if the content had been stolen.   
+    \item Link Exchange: is basically a "force"/"community" that exchage links reference between each others.
+    \item Resurrection: this technique consists in "resurrecting" dead web domains and add the reference to our site. This is a particular technique as not only it adds the reference between the nearly resurrected domain and our site, but also all the old references that pointed to the resurrected domain now is redirected to our site, giving an overall boost on the score.
+\end{itemize}
+
+\section{Semantic Web questions}
 \subsection{Describe the LOD classification: its features, uses and potential advantages and drawbacks}
 Linked Data are a generalization of the semantic web and they are used to
 create knowledge graphs.\\
@@ -246,8 +330,6 @@ and what is a triple.\\
 Two examples of RDF vocabularies
 are Dublin Core (DC) and Friend Of A Friend (FOAF).
 
-\newpage
-
 \subsection{Dublin Core: its uses, advantages and drawbacks}
 The Dublin Core is one of the first attempts to structure the web
 in a semantic way.\\
@@ -290,8 +372,6 @@ Weaknesses of FOAF include:
     \item Security and privacy concerns with sharing personal
     information in a machine-readable format.
 \end{itemize}
-
-\newpage
 
 \subsection{SPARQL: its uses, advantages and drawbacks}
 SPARQL (SPARQL Protocol And RDF Query Language) is a language that
@@ -342,54 +422,4 @@ by the existance of three different subsets of OWL:
     with a computational complexity SHOIN;
     \item OWL Full: exploits more advanced logics, impling high
     expressiveness, but is not decidable.
-\end{itemize}
-
-\subsection{Describe at least 1 optimal structure of an
-alliance to optimize PageRank}
-In order to boost the hypertextual score of a page people can use the
-spam farm technique which consists in the creation of structures which
-collect flows from other websites and then pass it to the target page.\\
-So an optimal structure can be constructed with some pages which are
-bidirectional linked to the target one. It mantains a
-very important property called reachability. It consists in the fact that
-every page must be reachable by the search engine. In fact if a page is
-not reached by the serch engine, it is like it doesn't exist.\\
-%So the optimal structure generalized is formed by different parts of the web.
-%One part is owned by us and having n pages we create a double link between
-%them and the target.\\ Then we have the accessible part which is not owned by us
-%but are a group of website that points to our webpage.\\ Finally there is the
-%unreachable part of the web which is not under our control that can have a
-%slight influence because it maybe points to an accessible page which then
-%it trasmits to our target page the flow.\\
-%There is also the optimal structure without full reachability with single
-%links to the target. However, a patch need to be applied, so that the target page
-%can be reachable by other pages which points the ones which  point to the target.
-Based on this, there are 4 different main possibilities to create an
-alliance:
-\begin{itemize}
-    \item Deep alliance: given 2 target pages owned by different entities
-    the alliance consists in having 2 target which are double-linked
-    with its pages and the allied pages.\\ In this way the ranking score
-    is the average of the 2 target pages. This implies more robustness
-    and stability.
-    \item Superficial alliance: given 2 target pages owned by different
-    entities the alliance consists in sharing all the unidirectional links of the
-    2 pages double-linking the 2 targets, creating a vortex of flow.\\
-    In this way it is more mantainable because there is only 1 double
-    link between the 2 targets. So the number of links are minimized.\\
-    The score for each target is an increment proportional to the other's
-    allied pages and this implies that the score of each target $>$ the
-    maximum of the original target score.
-    \item Ring: given 3 or more target pages owned by different
-    entities the alliance consists in sharing all the unidirectional links of the
-    creating a unidirectional vortex of flow betwwen the targets.\\
-    This ensures scalability and he score for each target is an increment proportional to the other's
-    allied pages and this implies that the score of each target $>$ the
-    maximum of the original target score.
-    \item Complete core: given 3 or more target pages owned by different
-    entities the alliance consists in sharing all the unidirectional links of the
-    creating a bidirectional vortex of flow betwwen the targets.\\
-    This ensures scalability and the score for each target is an increment proportional to the other's
-    allied pages and this implies that the score of each target $>$ the
-    maximum of the original target score.
 \end{itemize}
